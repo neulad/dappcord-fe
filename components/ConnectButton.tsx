@@ -3,7 +3,6 @@ import { Maybe } from "@metamask/providers/dist/utils";
 
 interface ConnectButtonProps {
   setAccount: any;
-  compatible: boolean;
   account: string;
 }
 

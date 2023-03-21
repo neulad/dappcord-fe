@@ -7,11 +7,15 @@ import ChannelPopup from "./ChannelPopup";
 
 interface ServerListProps {
   provider: ethers.providers.Web3Provider | undefined;
-  dappcord: ethers.Contract;
+  dappcord: ethers.Contract | undefined;
 }
 
 const ServerList = ({ provider, dappcord }: ServerListProps) => {
   const [isPopupActive, setIsPopupActive] = useState(false);
+
+  if (!dappcord) {
+    return <p>No Contract found!</p>;
+  }
 
   return (
     <div className="servers">
