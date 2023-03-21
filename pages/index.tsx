@@ -45,9 +45,10 @@ export default function Home() {
       return;
     }
 
+    console.log(chainId);
     const dappcord = new ethers.Contract(
-      publicRuntimeConfig.contracts[chainId].Dappcord.address,
-      publicRuntimeConfig.contracts[chainId].Dappcord.abi,
+      publicRuntimeConfig.contracts.addresses[chainId].Dappcord.address,
+      publicRuntimeConfig.contracts.Dappcord.abi,
       provider
     );
 

@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   publicRuntimeConfig: {
     contracts: {
-      "0x7a69": {
-        "Dappcord": {address: "0x5FbDB2315678afecb367f032d93F642f64180aa3", "abi": [
+      "Dappcord": {
+        abi: [
           {
             "inputs": [],
             "stateMutability": "nonpayable",
@@ -612,7 +612,18 @@ const nextConfig = {
             "stateMutability": "nonpayable",
             "type": "function"
           }
-        ]}
+        ]
+      },
+      addresses: {
+        "0x5": {
+          "Dappcord": {
+            address: "0x6e181877Cd22ebB05d8a19eb359Ab062473f6a16",
+  
+          }
+        },
+        "0x539": {
+          "Dappcord": {address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"}
+        }
       }
     }
   }
