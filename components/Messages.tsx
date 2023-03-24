@@ -29,7 +29,9 @@ const Messages = ({
 
   const socketInitializer = async () => {
     await fetch("/dappcord/api/socket");
-    socket = io();
+    socket = io({
+      path: "/dappcord/socket.io",
+    });
 
     socket.on("connect", () => {
       console.log("connected");
