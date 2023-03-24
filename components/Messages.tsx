@@ -28,7 +28,7 @@ const Messages = ({
   const [message, setMessage] = useState("");
 
   const socketInitializer = async () => {
-    await fetch("api/socket");
+    await fetch("/dappcord/api/socket");
     socket = io();
 
     socket.on("connect", () => {
