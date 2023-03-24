@@ -32,7 +32,7 @@ const SocketHandler = (
   if (res.socket.server.io) {
     console.log(`Already running!`);
   } else {
-    const io = new IOServer(res.socket.server);
+    const io = new IOServer(res.socket.server, { path: "/dappcord/socket.io" });
     res.socket.server.io = io;
 
     io.on("connection", (socket) => {
