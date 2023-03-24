@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  basePath: '/dappcord',
   publicRuntimeConfig: {
     contracts: {
       "Dappcord": {
