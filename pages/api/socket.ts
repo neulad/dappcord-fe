@@ -19,53 +19,11 @@ type Data = {
   name: string;
 };
 
-const messages = [
-  {
-    channel: 0,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 1,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 0,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 1,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 0,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 1,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 0,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 1,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-  {
-    channel: 0,
-    account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    text: "Hello everyone",
-  },
-];
+const messages: {
+  account: string;
+  channel: number;
+  text: string;
+}[] = [];
 
 const SocketHandler = (
   req: NextApiRequest,
@@ -85,7 +43,7 @@ const SocketHandler = (
       socket.on("new-message", (msg) => {
         messages.push(msg);
 
-        socket.broadcast.emit("messages-update");
+        io.emit("messages-update");
       });
     });
   }
